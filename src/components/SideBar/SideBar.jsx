@@ -5,6 +5,7 @@ import SideBarHeader from "./SideBarHeader";
 const SideBar = ({
   memos,
   addMemo,
+  deleteMemo,
   setMemoContainerIndex,
   memoContainerIndex,
 }) => {
@@ -13,6 +14,7 @@ const SideBar = ({
       <SideBarHeader />
       <MemoList
         memos={memos}
+        deleteMemo={deleteMemo}
         setMemoContainerIndex={setMemoContainerIndex}
         memoContainerIndex={memoContainerIndex}
       />

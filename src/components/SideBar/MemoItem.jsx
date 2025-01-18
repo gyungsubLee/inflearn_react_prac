@@ -1,10 +1,13 @@
-const MemoItem = ({ children, onClick, isSelected }) => {
+const MemoItem = ({ children, onClickItem, onClickDelete, isSelected }) => {
   return (
     <dlv
-      className={"MemoIte" + (isSelected ? " selected" : "")}
-      onClick={onClick}
+      className={"MemoItem" + (isSelected ? " selected" : "")}
+      onClick={onClickItem}
     >
       {children}
+      <button className="MemoItem__delete-button" onClick={onClickDelete}>
+        X
+      </button>
     </dlv>
   );
 };

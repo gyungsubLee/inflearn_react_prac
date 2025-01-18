@@ -1,17 +1,27 @@
 import MemoItem from "./MemoItem";
 
-const onClick = (idx, setMemoIdex) => {
+const onClickItem = (idx, setMemoIdex) => {
   setMemoIdex(idx);
   console.log("clicked!", idx);
 };
 
-const MemoList = ({ memos, setMemoContainerIndex, memoContainerIndex }) => {
+const MemoList = ({
+  memos,
+  setMemoContainerIndex,
+  memoContainerIndex,
+  deleteMemo,
+}) => {
   return (
     <div className="MemoList">
       {memos.map((memo, index) => (
         <MemoItem
           key={index}
-          onClick={() => onClick(index, setMemoContainerIndex)}
+          onClickItem={() => onClickItem(index, setMemoContainerIndex)}
+          onClickDelete={(e) => {
+            deleteMemo(index);
+            e.preventDefault();
+            e.stopPropagation();
+          }}
           isSelected={index === memoContainerIndex}
         >
           {memo.title}
