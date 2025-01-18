@@ -1,8 +1,7 @@
 .custom-btn {
-  width: 198px;
+  width: 199px;
   height: 40px;
   color: #fff;
-  border-radius: 5px;
   padding: 10px 25px;
   font-family: "Lato", sans-serif;
   font-weight: 500;
@@ -18,13 +17,8 @@
 
 /* butoon */
 .btn-3 {
-  background: rgb(0, 172, 238);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 172, 238, 1) 0%,
-    rgba(2, 126, 251, 1) 100%
-  );
-  width: 198px;
+  background: rgba(2, 126, 251, 1);
+  width: 199px;
   height: 40px;
   line-height: 42px;
   padding: 0;
@@ -65,6 +59,7 @@
 }
 .btn-3 span:hover {
   color: rgba(2, 126, 251, 1);
+  font-weight: 500;
 }
 .btn-3 span:before,
 .btn-3 span:after {
