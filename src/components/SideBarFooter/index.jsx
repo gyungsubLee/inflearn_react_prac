@@ -1,4 +1,5 @@
-import Button from "../ui/Button";
+import Button from "../../ui/Button/Button";
+import "./index.css";
 
 const SideBarFooter = ({ onClick }) => {
   return (

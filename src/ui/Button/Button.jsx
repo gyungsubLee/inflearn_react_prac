@@ -1,3 +1,5 @@
+import "./index.css";
+
 const Button = ({ onClick }) => {
   return (
     <button className="custom-btn btn-3" onClick={onClick}>

@@ -1,6 +1,7 @@
-import MemoList from "./MemoList";
-import SideBarFooter from "./SideBarFooter";
-import SideBarHeader from "./SideBarHeader";
+import MemoList from "../MemoList";
+import SideBarFooter from "../SideBarFooter";
+import SideBarHeader from "../SideBarHeader";
+import "./index.css";
 
 const SideBar = ({
   memos,
@@ -24,8 +25,3 @@ const SideBar = ({
 };
 
 export default SideBar;
-
-//   title: "Memo 1",
-//   content: "This is memo 1",
-//   createdAt: time, // 생성 시간
-//   updatedAt: time, // 수정 시간

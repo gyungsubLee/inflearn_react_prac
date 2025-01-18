@@ -1,4 +1,5 @@
-import MemoItem from "./MemoItem";
+import MemoItem from "../MemoItem";
+import "./index.css";
 
 const onClickItem = (idx, setMemoIdex) => {
   setMemoIdex(idx);

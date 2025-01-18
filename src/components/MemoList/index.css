@@ -1,0 +1,7 @@
+.MemoList {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* box-sizing: border-box; */
+  /* margin: 2px; */
+}

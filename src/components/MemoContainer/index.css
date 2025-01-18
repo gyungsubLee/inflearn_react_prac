@@ -1,0 +1,23 @@
+.MainContainer {
+  height: 100vh;
+  background-color: antiquewhite;
+  width: 100%;
+}
+
+.MainContainer__title {
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  font-size: 2rem;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.MainContainer__content {
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  font-size: 1.1rem;
+  min-height: 600px;
+  box-sizing: border-box;
+}

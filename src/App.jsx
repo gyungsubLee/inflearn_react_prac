@@ -1,6 +1,6 @@
 import "./App.css";
-import MemoContainer from "./components/MemoContainer/MemoContainer";
-import SideBar from "./components/SideBar/SideBar";
+import MemoContainer from "./components/MemoContainer";
+import SideBar from "./components/SideBar";
 import { useState } from "react";
 
 const time = new Date().getTime();
@@ -22,7 +22,6 @@ const defaultMemosData = [
 
 function App() {
   const [memos, setMemos] = useState(defaultMemosData);
-
   const [memoContainerIndex, setMemoContainerIndex] = useState(0);
 
   const setMemo = (newMemo) => {

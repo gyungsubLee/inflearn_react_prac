@@ -1,3 +1,5 @@
+import "./index.css";
+
 const MemoItem = ({ children, onClickItem, onClickDelete, isSelected }) => {
   return (
     <dlv
