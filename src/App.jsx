@@ -3,8 +3,11 @@ import MemoContainer from "./components/MemoContainer";
 import SideBar from "./components/SideBar";
 import { useState } from "react";
 import { setItem, getItem } from "./lib/storage";
+import debounce from "lodash.debounce";
 
 const time = new Date().getTime();
+
+const debounceSetItem = debounce(setItem, 5000);
 
 function App() {
   const [memos, setMemos] = useState(getItem("memos") || []);
@@ -15,7 +18,7 @@ function App() {
     newMemos[memoContainerIndex] = newMemo;
 
     setMemos(newMemos);
-    setItem("memos", newMemos);
+    debounceSetItem("memos", newMemos);
   };
 
   const addMemo = () => {
@@ -33,7 +36,7 @@ function App() {
 
     setMemos(newMemos);
     setMemoContainerIndex(memos.length);
-    setItem("memos", newMemos);
+    debounceSetItem("memos", newMemos);
   };
 
   const deleteMemo = (index) => {
@@ -47,7 +50,7 @@ function App() {
       setMemoContainerIndex(0);
     }
 
-    setItem("memos", newMemos);
+    debounceSetItem("memos", newMemos);
   };
 
   return (
