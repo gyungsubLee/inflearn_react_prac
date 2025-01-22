@@ -28,3 +28,8 @@ export interface IActionButtons {
   questionsLength: number;
   step: number;
 }
+
+export interface RouteParams {
+  surveyId?: string;
+  step?: string;
+}
