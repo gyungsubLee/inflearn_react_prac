@@ -1,12 +1,17 @@
-import { IActionButtons } from "../../\btypes";
-import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { useNavigate, useParams } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import questionsState from "../../stores/questions/atom";
 
-const ActionButtons: React.FC<IActionButtons> = ({ questionsLength, step }) => {
-  const isLast = questionsLength - 1 === step;
+const ActionButtons = () => {
+  const params = useParams();
+  const step = parseInt(params.step || "0", 10);
+  const questions = useRecoilValue(questionsState);
+  const isLast = questions.length - 1 === step;
   const navigate = useNavigate();
 
   return (
-    <div>
+    <ActionButtonsWrapper>
       {step === 0 || (
         <button
           onClick={() => {
@@ -34,8 +39,10 @@ const ActionButtons: React.FC<IActionButtons> = ({ questionsLength, step }) => {
           다음
         </button>
       )}
-    </div>
+    </ActionButtonsWrapper>
   );
 };
+
+const ActionButtonsWrapper = styled.div``;
 
 export default ActionButtons;

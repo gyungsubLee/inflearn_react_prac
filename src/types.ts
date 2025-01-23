@@ -1,4 +1,4 @@
-interface IOptions {
+export interface IOptions {
   placeholder?: string;
   items?: string[];
 }
@@ -9,21 +9,6 @@ export interface IQuestion {
   type: string;
   required: boolean;
   options: IOptions;
-}
-
-export interface IQuestionBox {
-  question: IQuestion;
-  questionsLength: number;
-  step: number;
-  answer: string;
-  setAnswers: (newAnswer: string) => void;
-}
-
-export interface IBody {
-  type: string;
-  options: IOptions;
-  answer: string;
-  setAnswers: (newAnswer: string) => void;
 }
 
 export interface ITextInput {
@@ -42,9 +27,4 @@ export interface ISelectInput {
   };
 }
 
-export interface IActionButtons {
-  questionsLength: number;
-  step: number;
-}
-
-export type IInput = ITextInput | ISelectInput;
+export type InputType = ITextInput | ISelectInput;

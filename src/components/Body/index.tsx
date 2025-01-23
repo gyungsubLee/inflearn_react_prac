@@ -2,18 +2,24 @@ import React from "react";
 import TextInput from "../TextInput";
 import TextAreaInput from "../TextareaInput";
 import SelectaInput from "../SelectInput";
-import { IBody, IInput } from "../../\btypes";
+import { IOptions, IInput } from "../../\btypes";
 
-const Body: React.FC<IBody> = ({ type, options, answer, setAnswers }) => {
-  // Define the component type based on ITextInput props
+interface BodyProps {
+  type: string;
+  options: IOptions;
+  answer: string;
+  setAnswer: (newAnswer: string) => void;
+}
+
+const Body: React.FC<BodyProps> = ({ type, options, answer, setAnswer }) => {
   let InputComponent: React.ComponentType<IInput> | null = null;
 
   if (type === "select") {
-    InputComponent = SelectaInput; // Placeholder
+    InputComponent = SelectaInput;
   } else if (type === "text") {
     InputComponent = TextInput;
   } else if (type === "textarea") {
-    InputComponent = TextAreaInput; // Placeholder
+    InputComponent = TextAreaInput;
   }
 
   if (!InputComponent) {
@@ -21,7 +27,7 @@ const Body: React.FC<IBody> = ({ type, options, answer, setAnswers }) => {
   }
 
   return (
-    <InputComponent answer={answer} setAnswers={setAnswers} options={options} />
+    <InputComponent answer={answer} setAnswers={setAnswer} options={options} />
   );
 };
 
