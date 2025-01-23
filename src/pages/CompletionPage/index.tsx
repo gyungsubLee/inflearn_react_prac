@@ -1,14 +1,12 @@
 import styled from "styled-components";
-
-const a = 123;
+import { useRecoilValue } from "recoil";
+import testWithComma from "../../stores/test/testWithComma";
 
 const CompletionPage = () => {
-  return <CompletionPageWrapper>CompletionPage</CompletionPageWrapper>;
+  const test = useRecoilValue(testWithComma);
+  return <CompletionPageWrapper>{test}</CompletionPageWrapper>;
 };
 
-const CompletionPageWrapper = styled.div`
-  background: aqua;
-  padding: ${a === 123 ? "4em" : "1em"};
-`;
+const CompletionPageWrapper = styled.div``;
 
 export default CompletionPage;
