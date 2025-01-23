@@ -5,7 +5,6 @@ import SurveyPage from "./pages/SurveyPage";
 function App() {
   return (
     <>
-      <div>Hello World</div>
       <Routes>
         <Route path="/done" element={<CompletionPage />} />
         <Route path="/survey/:surveyId" element={<SurveyPage />}>

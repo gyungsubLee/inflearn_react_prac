@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { IQuestion, RouteParams } from "../../\btypes";
+import { IQuestion } from "../../\btypes";
 import ProgressIndicator from "../../components/ProgressIndicator";
 import QuestionBox from "../../components/QuestionBox";
 
@@ -11,19 +11,32 @@ const questions: IQuestion[] = [
     desc: "설명1 입니다.",
     type: "text",
     required: false,
-    options: {},
+    options: {
+      placeholder: "placeholde 입니디.",
+    },
   },
   {
     title: "질문2 입니다.",
     desc: "설명2 입니다.",
-    type: "text",
+    type: "textarea",
     required: false,
-    options: {},
+    options: {
+      placeholder: "placeholde 입니디.",
+    },
+  },
+  {
+    title: "질문3 입니다.",
+    desc: "설명3 입니다.",
+    type: "select",
+    required: false,
+    options: {
+      items: ["답변1", "답변2", "답변3", "답변4", "답변5"],
+    },
   },
 ];
 
 const SurveyPage = () => {
-  const params = useParams<RouteParams>();
+  const params = useParams();
 
   const step = parseInt(params.step || "0", 10);
   const [answers, setAnsers] = useState<string[]>([]);

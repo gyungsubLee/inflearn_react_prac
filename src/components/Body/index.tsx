@@ -1,24 +1,28 @@
 import React from "react";
 import TextInput from "../TextInput";
-import { IBody, ITextInput } from "../../\btypes";
+import TextAreaInput from "../TextareaInput";
+import SelectaInput from "../SelectInput";
+import { IBody, IInput } from "../../\btypes";
 
-const Body: React.FC<IBody> = ({ type, answer, setAnswers }) => {
+const Body: React.FC<IBody> = ({ type, options, answer, setAnswers }) => {
   // Define the component type based on ITextInput props
-  let InputComponent: React.ComponentType<ITextInput> | null = null;
+  let InputComponent: React.ComponentType<IInput> | null = null;
 
   if (type === "select") {
-    // InputComponent = SelectInput; // Placeholder
+    InputComponent = SelectaInput; // Placeholder
   } else if (type === "text") {
     InputComponent = TextInput;
   } else if (type === "textarea") {
-    // InputComponent = TextareaInput; // Placeholder
+    InputComponent = TextAreaInput; // Placeholder
   }
 
   if (!InputComponent) {
     return <div>유효하지 않은 Type</div>;
   }
 
-  return <InputComponent answer={answer} setAnswers={setAnswers} />;
+  return (
+    <InputComponent answer={answer} setAnswers={setAnswers} options={options} />
+  );
 };
 
 export default Body;

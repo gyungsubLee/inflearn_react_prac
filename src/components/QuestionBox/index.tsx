@@ -15,7 +15,12 @@ const QuestionBox: React.FC<IQuestionBox> = ({
     <div>
       <Title>{question.title}</Title>
       <Desc>{question.desc}</Desc>
-      <Body type={question.type} answer={answer} setAnswers={setAnswers}></Body>
+      <Body
+        type={question.type}
+        options={question.options}
+        answer={answer}
+        setAnswers={setAnswers}
+      ></Body>
       <ActionButtons
         questionsLength={questionsLength}
         step={step}
